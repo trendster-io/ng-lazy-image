@@ -1,0 +1,28 @@
+{
+  "name": "@trendster-io/ng-lazy-image",
+  "version": "1.0.1",
+  "description": "An Angular directive to efficiently lazy load images using the IntersectionObserver API.",
+  "author": "Omar Doma",
+  "license": "MIT",
+  "homepage": "https://github.com/trendster-io/ng-lazy-image#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trendster-io/ng-lazy-image.git"
+  },
+  "bugs": {
+    "url": "https://github.com/trendster-io/ng-lazy-image/issues"
+  },
+  "keywords": [
+    "Trendster",
+    "Angular",
+    "Directive",
+    "Lazy Loading",
+    "Image Lazy Loading",
+    "img",
+    "Lazy Loading Images"
+  ],
+  "peerDependencies": {
+    "@angular/common": "^8.1.0",
+    "@angular/core": "^8.1.0"
+  }
+}
