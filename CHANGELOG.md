@@ -1,3 +1,9 @@
+<a name="1.0.3"></a>
+
+# 1.0.3 (2019-07-04)
+
+Fixed a typo in version badge in README.md
+
 <a name="1.0.2"></a>
 
 # 1.0.2 (2019-07-04)
