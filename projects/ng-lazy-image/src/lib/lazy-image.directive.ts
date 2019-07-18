@@ -41,7 +41,7 @@ export class LazyImageDirective implements OnChanges, OnDestroy {
   }
 
   private canLazyLoad(): boolean {
-    return window && 'IntersectionObserver' in window;
+    return typeof window !== 'undefined' && 'IntersectionObserver' in window;
   }
 
   private load(): void {
