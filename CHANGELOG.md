@@ -1,3 +1,9 @@
+<a name="1.0.4"></a>
+
+# 1.0.4 (2019-07-18)
+
+Fixed Server-Side Rendering (SSR).
+
 <a name="1.0.3"></a>
 
 # 1.0.3 (2019-07-04)

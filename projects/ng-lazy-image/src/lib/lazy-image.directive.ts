@@ -1,12 +1,15 @@
+import { isPlatformBrowser } from '@angular/common';
 import {
   Directive,
   ElementRef,
   EventEmitter,
   HostBinding,
+  Inject,
   Input,
   OnChanges,
   OnDestroy,
   Output,
+  PLATFORM_ID,
   SimpleChanges
 } from '@angular/core';
 
@@ -15,6 +18,7 @@ import {
 })
 export class LazyImageDirective implements OnChanges, OnDestroy {
   private io: IntersectionObserver;
+  private isBrowser: boolean;
   @Input() src: string;
   @Input() root: Element;
   @Input() rootMargin: string;
@@ -26,7 +30,12 @@ export class LazyImageDirective implements OnChanges, OnDestroy {
     return this.srcAttr ? 'visible' : 'hidden';
   }
 
-  constructor(private el: ElementRef<Element>) {}
+  constructor(
+    private el: ElementRef<Element>,
+    @Inject(PLATFORM_ID) platformId: object
+  ) {
+    this.isBrowser = isPlatformBrowser(platformId);
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.src && changes.src.currentValue) {
@@ -41,7 +50,7 @@ export class LazyImageDirective implements OnChanges, OnDestroy {
   }
 
   private canLazyLoad(): boolean {
-    return window && 'IntersectionObserver' in window;
+    return this.isBrowser && 'IntersectionObserver' in window;
   }
 
   private load(): void {

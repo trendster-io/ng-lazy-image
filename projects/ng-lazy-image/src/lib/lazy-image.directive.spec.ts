@@ -86,7 +86,7 @@ describe('LazyImageDirective', () => {
     fixture = TestBed.createComponent(ContainerComponent);
     container = fixture.componentInstance;
     el = fixture.elementRef;
-    directive = new LazyImageDirective(el);
+    directive = new LazyImageDirective(el, null);
     fixture.detectChanges();
   });
 
